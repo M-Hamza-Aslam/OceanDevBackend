@@ -16,7 +16,11 @@ app.use(cors());
 
 // Routes
 const eventRoutes = require("./api/routes/event");
+const joinusFormRoutes = require("./api/routes/joinusForm");
+const sponsorFormRoutes = require("./api/routes/sponsorForm");
 app.use("/event", eventRoutes);
+app.use("/joinusForm", joinusFormRoutes);
+app.use("/sponsorForm", sponsorFormRoutes);
 
 // setting mongoose connection while starting server
 const mongoose = require("mongoose");

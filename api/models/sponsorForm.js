@@ -2,28 +2,24 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const EventSchema = new Schema({
-  title: {
+const SponsorFormSchema = new Schema({
+  companyName: {
     type: String,
     required: true,
   },
-  img: {
+  contactPerson: {
     type: String,
     required: true,
   },
-  date: {
-    type: Date,
-    required: true,
-  },
-  location: {
+  email: {
     type: String,
     required: true,
   },
-  status: {
+  sponsorshipLevel: {
     type: String,
     required: true,
   },
-  description: {
+  message: {
     type: String,
     default: "",
   },
@@ -37,4 +33,4 @@ const EventSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("Event", EventSchema);
+module.exports = mongoose.model("SponsorForm", SponsorFormSchema);
