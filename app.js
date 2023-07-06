@@ -15,8 +15,8 @@ const cors = require("cors");
 app.use(cors());
 
 // Routes
-const taskRoutes = require("./api/routes/task");
-app.use("/task", taskRoutes);
+const eventRoutes = require("./api/routes/event");
+app.use("/event", eventRoutes);
 
 // setting mongoose connection while starting server
 const mongoose = require("mongoose");
