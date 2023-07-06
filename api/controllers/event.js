@@ -23,7 +23,7 @@ module.exports = {
   addNewEvent: async (req, res) => {
     try {
       //data coming with the request
-      const { title, date, location, description } = req.body;
+      const { title, date, location, description, img, status } = req.body;
       //input validation
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -38,6 +38,8 @@ module.exports = {
         date: date,
         location: location,
         description: description,
+        img: img,
+        status: status,
       });
       //save event
       const result = await event.save();
@@ -48,6 +50,8 @@ module.exports = {
         date: result.date,
         location: result.location,
         description: result.description,
+        img: result.img,
+        status: result.status,
       };
       res.status(201).json({
         message: "Event created successfully!",
